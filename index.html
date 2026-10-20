@@ -3,136 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youcef Djelouah - IT Support Specialist Portfolio</title>
+    <meta name="description"
+          content="Youcef Djelouah's IT support portfolio featuring hands-on networking labs, hardware projects, and technical troubleshooting.">
+    <title>Youcef Djelouah | IT Support Portfolio</title>
+
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             background: #0f172a;
             color: #f8fafc;
-            line-height: 1.6;
+            line-height: 1.7;
         }
+
+        a {
+            color: #7dd3fc;
+            text-underline-offset: 4px;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+
+        a:focus-visible {
+            outline: 3px solid #7dd3fc;
+            outline-offset: 5px;
+        }
+
         header {
             background: #1e293b;
-            padding: 3rem 5%;
+            padding: 3rem 1.5rem;
             border-bottom: 2px solid #38bdf8;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
+
         .profile-photo {
+            display: block;
             width: 150px;
             height: 150px;
+            margin: 0 auto 1rem;
             border-radius: 50%;
             border: 4px solid #38bdf8;
             object-fit: cover;
-            margin-bottom: 1rem;
-            background-color: #334155;
+            background: #334155;
         }
+
         header h1 {
-            font-size: 2.8rem;
+            font-size: clamp(2.2rem, 6vw, 3rem);
             color: #38bdf8;
+            line-height: 1.2;
         }
+
         header p {
-            color: #94a3b8;
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
+            max-width: 700px;
+            margin: 1rem auto 0;
+            color: #cbd5e1;
+            font-size: 1.1rem;
         }
+
         .cert-badge {
             display: inline-block;
-            background: #0284c7;
-            color: #fff;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-top: 1rem;
+            margin-top: 1.25rem;
+            padding: 0.45rem 1rem;
+            border: 1px solid #38bdf8;
+            border-radius: 24px;
+            background: #0c4a6e;
+            color: #e0f2fe;
             font-size: 0.9rem;
+            font-weight: 600;
         }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.5rem;
+            margin-top: 1.75rem;
+        }
+
+        nav a {
+            font-weight: 600;
+            text-decoration: none;
+        }
+
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 3rem 1.5rem;
         }
+
         .section {
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
+            scroll-margin-top: 1.5rem;
         }
+
         h2 {
-            font-size: 2rem;
-            color: #38bdf8;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid #334155;
+            color: #38bdf8;
+            font-size: clamp(1.6rem, 4vw, 2rem);
+            line-height: 1.3;
         }
+
+        h3 {
+            margin-bottom: 0.8rem;
+            color: #f1f5f9;
+            font-size: 1.35rem;
+            line-height: 1.4;
+        }
+
+        p,
+        li {
+            color: #cbd5e1;
+        }
+
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns:
+                repeat(auto-fit, minmax(min(100%, 280px), 1fr));
             gap: 1.5rem;
         }
+
         .card {
-            background: #1e293b;
-            padding: 2rem;
-            border-radius: 8px;
+            min-width: 0;
+            padding: 1.75rem;
             border: 1px solid #334155;
+            border-radius: 12px;
+            background: #1e293b;
         }
-        .card h3 {
-            color: #f1f5f9;
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-        }
-        .card p, .card ul {
-            color: #94a3b8;
-            font-size: 1rem;
-        }
+
         ul {
-            list-style-position: inside;
-            margin-left: 0.5rem;
+            padding-left: 1.25rem;
         }
+
         li {
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.6rem;
         }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+        }
+
         .tag {
             display: inline-block;
-            background: #0369a1;
-            color: #e0f2fe;
             padding: 0.3rem 0.8rem;
-            border-radius: 4px;
+            border-radius: 5px;
+            background: #0c4a6e;
+            color: #e0f2fe;
             font-size: 0.85rem;
-            margin-top: 1rem;
-            font-weight: bold;
+            font-weight: 600;
         }
-        .responsive-iframe-container {
-            position: relative;
+
+        .featured-lab {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            border: 1px solid #475569;
+            border-radius: 16px;
+            background: #1e293b;
+        }
+
+        .eyebrow {
+            margin-bottom: 0.75rem;
+            color: #7dd3fc;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .featured-lab h3 {
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+        }
+
+        .featured-lab ul {
+            margin-top: 1.25rem;
+        }
+
+        .video-note {
+            margin-top: 1rem;
+            color: #a9b9cd;
+            font-size: 0.9rem;
+        }
+
+        .video-player {
             width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            margin-top: 1rem;
-            border-radius: 6px;
-            overflow: hidden;
+            max-width: 380px;
+            margin: 0 auto;
         }
-        .responsive-iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+
+        .portrait-video {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            overflow: hidden;
+            border: 1px solid #475569;
+            border-radius: 12px;
+            background: #020617;
+        }
+
+        .portrait-video iframe {
+            display: block;
             width: 100%;
             height: 100%;
             border: 0;
         }
-        footer {
+
+        .video-player figcaption {
+            margin-top: 0.75rem;
             text-align: center;
-            padding: 2rem;
-            background: #1e293b;
-            color: #64748b;
-            font-size: 0.95rem;
-            border-top: 1px solid #334155;
+            font-size: 0.9rem;
         }
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2.2rem;
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .presentation {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            margin-top: 1.25rem;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #020617;
+        }
+
+        .presentation iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        footer {
+            padding: 2rem 1.5rem;
+            border-top: 1px solid #334155;
+            background: #1e293b;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        footer p + p {
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 760px) {
+            .featured-lab {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
             }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
             .profile-photo {
                 width: 120px;
                 height: 120px;
@@ -140,81 +278,230 @@
         }
     </style>
 </head>
+
 <body>
     <header>
-        <!-- Replace the src link below with your image link -->
-        <img src="https://github.com/youcefdz85/yourusername.github.io/blob/main/IMG_6285.jpg?raw=true" alt="Youcef Djelouah" class="profile-photo">
+        <img
+            src="IMG_6285.jpg"
+            alt="Youcef Djelouah"
+            class="profile-photo"
+            width="150"
+            height="150">
+
         <h1>Youcef Djelouah</h1>
-        <p>Entry-Level IT Support Specialist | Hardware & Multi-OS Technical Support</p>
-        <div class="cert-badge">Pursuing CompTIA A+ Certification</div>
+
+        <p>
+            Entry-Level IT Support Specialist |
+            Hardware &amp; Multi-OS Technical Support
+        </p>
+
+        <span class="cert-badge">
+            Pursuing CompTIA A+ Certification
+        </span>
+
+        <nav aria-label="Portfolio navigation">
+            <a href="#about">About</a>
+            <a href="#lab-video">Lab Video</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+        </nav>
     </header>
 
-    <div class="container">
-        <section class="section">
+    <main class="container">
+        <section id="about" class="section">
             <h2>About Me</h2>
-            <p>Motivated IT student and aspiring Technical Support Specialist with hands-on experience in PC assembly, hardware installation, and multi-platform operating system navigation. Currently preparing for the CompTIA A+ certification to build a rigorous foundation in core computing concepts, network setup, and structured troubleshooting. Focused on delivering high-quality tech support and optimizing workplace systems.</p>
+
+            <p>
+                Motivated IT student and aspiring Technical Support
+                Specialist with hands-on experience in PC assembly,
+                hardware installation, and multi-platform operating
+                system navigation. Currently preparing for the
+                CompTIA A+ certification to build a rigorous foundation
+                in core computing concepts, network setup, and
+                structured troubleshooting. Focused on delivering
+                high-quality tech support and optimizing workplace
+                systems.
+            </p>
         </section>
 
-        <section class="section">
-            <h2>Technical Skills & Competencies</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Hardware & Assembly</h3>
+        <section id="lab-video" class="section">
+            <h2>Hands-On IT Infrastructure</h2>
+
+            <div class="featured-lab">
+                <div>
+                    <p class="eyebrow">Featured Lab Experience</p>
+
+                    <h3>Putting IT Knowledge Into Practice</h3>
+
+                    <p>
+                        A look inside my server and network rack lab,
+                        where I am developing practical experience
+                        with networking equipment, physical
+                        connections, and IT troubleshooting.
+                    </p>
+
                     <ul>
-                        <li>PC Assembly & Component Installation</li>
-                        <li>RAM, Storage & GPU Upgrades</li>
-                        <li>Peripheral & Workstation Setup</li>
+                        <li>
+                            Exploring network switches, patch panels,
+                            and server hardware.
+                        </li>
+                        <li>
+                            Identifying Ethernet ports and tracing
+                            physical network connections.
+                        </li>
+                        <li>
+                            Working with equipment and a laptop
+                            during hands-on training.
+                        </li>
+                        <li>
+                            Learning a structured approach to
+                            connectivity troubleshooting.
+                        </li>
+                    </ul>
+
+                    <div class="tags">
+                        <span class="tag">Networking</span>
+                        <span class="tag">Hardware</span>
+                        <span class="tag">Troubleshooting</span>
+                    </div>
+
+                    <p class="video-note">
+                        74-second portfolio video with narration
+                        and captions.
+                    </p>
+                </div>
+
+                <figure class="video-player">
+                    <div class="portrait-video">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/DI4IET2pUuM"
+                            title="Youcef Djelouah — Hands-On IT Infrastructure"
+                            loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <figcaption>
+                        <a
+                            href="https://www.youtube.com/watch?v=DI4IET2pUuM"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            Watch on YouTube
+                        </a>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Technical Skills &amp; Competencies</h2>
+
+            <div class="grid">
+                <article class="card">
+                    <h3>Hardware &amp; Assembly</h3>
+                    <ul>
+                        <li>PC Assembly &amp; Component Installation</li>
+                        <li>RAM, Storage &amp; GPU Upgrades</li>
+                        <li>Peripheral &amp; Workstation Setup</li>
                         <li>Physical Diagnostic Scan Tools</li>
                     </ul>
-                </div>
-                <div class="card">
+                </article>
+
+                <article class="card">
                     <h3>Operating Systems</h3>
                     <ul>
                         <li>Windows 10 / Windows 11</li>
                         <li>macOS</li>
-                        <li>iOS & Android OS</li>
-                        <li>Basic System Preferences & Settings</li>
+                        <li>iOS &amp; Android OS</li>
+                        <li>Basic System Preferences &amp; Settings</li>
                     </ul>
-                </div>
-                <div class="card">
-                    <h3>Education & Goals</h3>
+                </article>
+
+                <article class="card">
+                    <h3>Education &amp; Goals</h3>
                     <ul>
                         <li>CompTIA A+ Certification (In Progress)</li>
-                        <li>Hardware & OS Fundamentals</li>
+                        <li>Hardware &amp; OS Fundamentals</li>
                         <li>Network Setup Essentials</li>
                         <li>Structured Problem Solving</li>
                     </ul>
-                </div>
+                </article>
             </div>
         </section>
 
-        <section class="section">
-            <h2>Hands-On Projects & Labs</h2>
+        <section id="projects" class="section">
+            <h2>Hands-On Projects &amp; Labs</h2>
+
             <div class="grid">
-                <div class="card">
-                    <h3>Custom Workstation Build & Assembly</h3>
-                    <p>Assembled hardware components into a fully functional PC workstation, installing essential internal parts (CPU, RAM, storage, power supply) and verifying physical connections prior to operating system installation.</p>
-                    <span class="tag">Hardware</span>
-                </div>
-                <div class="card">
-                    <h3>Cross-Platform System Configuration</h3>
-                    <p>Configured primary user settings, network connectivity, and device integrations across desktop (Windows/macOS) and mobile (iOS/Android) environments to maintain continuous connectivity.</p>
-                    <span class="tag">OS Management</span>
-                </div>
-                <div class="card" style="grid-column: 1 / -1;">
-                    <h3>IT Support Technical Presentation</h3>
-                    <p>Interactive presentation showcasing core technical workflows and system overview documentation.</p>
-                    <div class="responsive-iframe-container">
-                        <iframe src="https://docs.google.com/presentation/d/1pphiW1fLc1dMqMvMRyGZyS1fT4RW0SD03C82fBY9UD4/embed?start=false&loop=false&delayms=3000" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                <article class="card">
+                    <h3>Custom Workstation Build &amp; Assembly</h3>
+                    <p>
+                        Assembled hardware components into a fully
+                        functional PC workstation, installing
+                        essential internal parts (CPU, RAM, storage,
+                        power supply) and verifying physical
+                        connections prior to operating system
+                        installation.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Hardware</span>
                     </div>
-                    <span class="tag">Presentation</span>
-                </div>
+                </article>
+
+                <article class="card">
+                    <h3>Cross-Platform System Configuration</h3>
+                    <p>
+                        Configured primary user settings, network
+                        connectivity, and device integrations across
+                        desktop (Windows/macOS) and mobile
+                        (iOS/Android) environments to maintain
+                        continuous connectivity.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">OS Management</span>
+                    </div>
+                </article>
+
+                <article class="card full-width">
+                    <h3>IT Support Technical Presentation</h3>
+                    <p>
+                        Interactive presentation showcasing core
+                        technical workflows and system overview
+                        documentation.
+                    </p>
+
+                    <div class="presentation">
+                        <iframe
+                            src="https://docs.google.com/presentation/d/1pphiW1fLc1dMqMvMRyGZyS1fT4RW0SD03C82fBY9UD4/embed?start=false&amp;loop=false&amp;delayms=3000"
+                            title="IT Support Technical Presentation"
+                            loading="lazy"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag">Presentation</span>
+                    </div>
+                </article>
             </div>
         </section>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Youcef Djelouah | IT Support Specialist Portfolio</p>
+        <p>
+            &copy; 2026 Youcef Djelouah |
+            IT Support Specialist Portfolio
+        </p>
+        <p>
+            <a
+                href="https://github.com/youcefdz85"
+                target="_blank"
+                rel="noopener noreferrer">
+                View My GitHub
+            </a>
+        </p>
     </footer>
 </body>
 </html>
